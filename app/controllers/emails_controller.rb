@@ -14,6 +14,7 @@ class EmailsController < ApplicationController
     @email = Email.find(params[:id])
     @email.destroy
     respond_with(@email)
+    logger.info "Email is #{@email}"
   end
   
   ActiveSupport.run_load_hooks(:fat_free_crm_emails_controller, self)
